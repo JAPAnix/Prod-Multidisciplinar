@@ -1,0 +1,21 @@
+# Dependências
+node_modules/
+package-lock.json
+
+# Variáveis de ambiente (NUNCA COMMITAR)
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
