@@ -140,3 +140,14 @@ Este projeto é de código aberto e está disponível sob a licença ISC.
 ## 👨‍💻 Autor
 
 Desenvolvido como exemplo de sistema CRUD com Node.js e MongoDB.
+
+## ☁️ Deploy na Vercel
+
+Este projeto inclui funções serverless em `api/` para rodar no ambiente da Vercel. Passos:
+
+1. No painel do projeto na Vercel, adicione a variável de ambiente `MONGODB_URI` com sua connection string do Atlas.
+2. Faça o deploy. O frontend usa `fetch('/api/users')` e as rotas estarão disponíveis em:
+   - `GET/POST  /api/users`
+   - `GET/PUT/DELETE  /api/users/[id]`
+3. Opcional: localmente, rode `npm start` para usar o servidor Express ou `vercel dev` para simular as funções serverless.
+

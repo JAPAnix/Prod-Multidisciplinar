@@ -1,4 +1,5 @@
-const API_URL = 'http://localhost:3000/api/users';
+// Usa rota relativa para funcionar tanto local (com proxy) quanto no Vercel
+const API_URL = '/api/users';
 
 // Elementos do DOM
 const userForm = document.getElementById('userForm');
