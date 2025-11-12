@@ -62,7 +62,7 @@ async function createUser(data) {
             userForm.reset();
             loadUsers();
         } else {
-            showMessage('error', result.message);
+            showMessage('error', result.message + (result.detail ? `: ${result.detail}` : ''));
         }
     } catch (error) {
         showMessage('error', 'Erro ao cadastrar usuário. Verifique se o servidor está rodando.');
@@ -80,6 +80,7 @@ async function loadUsers() {
             displayUsers(result.data);
         } else {
             usersList.innerHTML = '<p class="error">Erro ao carregar usuários</p>';
+            showMessage('error', (result.message || 'Erro ao carregar usuários') + (result.detail ? `: ${result.detail}` : ''));
         }
     } catch (error) {
         usersList.innerHTML = '<p class="error">Erro ao conectar com o servidor</p>';
@@ -172,7 +173,7 @@ async function updateUser(id, data) {
             resetForm();
             loadUsers();
         } else {
-            showMessage('error', result.message);
+            showMessage('error', result.message + (result.detail ? `: ${result.detail}` : ''));
         }
     } catch (error) {
         showMessage('error', 'Erro ao atualizar usuário');
@@ -197,7 +198,7 @@ async function deleteUser(id) {
             showMessage('success', result.message);
             loadUsers();
         } else {
-            showMessage('error', result.message);
+            showMessage('error', result.message + (result.detail ? `: ${result.detail}` : ''));
         }
     } catch (error) {
         showMessage('error', 'Erro ao excluir usuário');
