@@ -1,5 +1,8 @@
-// Usa rota relativa para funcionar tanto local (com proxy) quanto no Vercel
-const API_URL = '/api/users';
+// Configura URL do backend.
+// Se houver variável global BACKEND_URL (injetada no HTML), usa ela; caso contrário, tenta rota relativa
+// Útil quando frontend e backend estão em hosts diferentes (Vercel + Render/Railway)
+const BACKEND_URL = window.BACKEND_URL || '';
+const API_URL = (BACKEND_URL ? BACKEND_URL.replace(/\/$/, '') : '') + '/api/users';
 
 // Elementos do DOM
 const userForm = document.getElementById('userForm');
