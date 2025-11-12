@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 // Conexão com MongoDB Atlas
-const MONGODB_URI = 'mongodb+srv://admin:admin123@multi.nj6dzjk.mongodb.net/cadastroDB?retryWrites=true&w=majority&appName=Multi';
+const MONGODB_URI = 'mongodb+srv://admin:admin1234@multi.nj6dzjk.mongodb.net/cadastroDB?retryWrites=true&w=majority&appName=Multi';
 
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,

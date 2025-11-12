@@ -9,8 +9,10 @@ if (!cached) {
 async function connectToDatabase() {
   if (cached.conn) return cached.conn;
 
-  // Fallback inseguro: ideal usar variável de ambiente MONGODB_URI na Vercel.
-  const uri = process.env.MONGODB_URI || 'mongodb+srv://admin:admin123@multi.nj6dzjk.mongodb.net/cadastroDB?retryWrites=true&w=majority&appName=Multi';
+  const uri = process.env.MONGODB_URI;
+  if (!uri) {
+    throw new Error('Variável de ambiente MONGODB_URI não definida');
+  }
 
   if (!cached.promise) {
     cached.promise = mongoose
